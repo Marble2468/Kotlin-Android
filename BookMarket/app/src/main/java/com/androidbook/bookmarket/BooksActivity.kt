@@ -18,7 +18,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 
 class BooksActivity : AppCompatActivity() {
-
     lateinit var book1Obj: ImageView
     lateinit var book2Obj: ImageView
     lateinit var book3Obj: ImageView
@@ -58,11 +57,9 @@ class BooksActivity : AppCompatActivity() {
         }
 
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
-
     }
 
     fun BookItem1() {
-
         val intent: Intent = Intent(this, BookActivity::class.java)
         intent.putExtra("bookid", "BOOK1234")
         intent.putExtra("name", "쉽게 배우는 알고리즘")
@@ -75,11 +72,9 @@ class BooksActivity : AppCompatActivity() {
         )
         intent.putExtra("category", "IT/모바일")
         startActivity(intent)
-
     }
 
     fun BookItem2() {
-
         val intent: Intent = Intent(this, BookActivity::class.java)
         intent.putExtra("bookid", "BOOK1235")
         intent.putExtra("name", "난생처음 MySQL")
@@ -92,11 +87,9 @@ class BooksActivity : AppCompatActivity() {
         )
         intent.putExtra("category", "IT/모바일")
         startActivity(intent)
-
     }
 
     fun BookItem3() {
-
         val intent: Intent = Intent(this, BookActivity::class.java)
         intent.putExtra("bookid", "BOOK1236")
         intent.putExtra("name", "쉽게 배우는 PHP 웹 프로그래밍")
@@ -109,11 +102,9 @@ class BooksActivity : AppCompatActivity() {
         )
         intent.putExtra("category", "IT/모바일")
         startActivity(intent)
-
     }
 
     fun BookItem4() {
-
         val intent: Intent = Intent(this, BookActivity::class.java)
         intent.putExtra("bookid", "BOOK1237")
         intent.putExtra("name", "미라클 HTML5+CSS3+자바스크립트")
@@ -126,11 +117,9 @@ class BooksActivity : AppCompatActivity() {
         )
         intent.putExtra("category", "IT/모바일")
         startActivity(intent)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_books, menu)
 
@@ -140,30 +129,24 @@ class BooksActivity : AppCompatActivity() {
         searchView.queryHint = "도서명을 입력해주세요."
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
             override fun onQueryTextSubmit(query: String): Boolean {
-
                 Toast.makeText(applicationContext, query, Toast.LENGTH_LONG).show()
 
                 return false
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-
                 return false
             }
-
         })
 
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
-
             }
 
             R.id.menu_home -> {
@@ -192,5 +175,4 @@ class BooksActivity : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
-
 }
